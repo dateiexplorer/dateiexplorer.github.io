@@ -1,3 +1,9 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
 # Hello, I'm Justus Röderer
 
 I'm a programmer, Linux enthusiast and trust in open source software. I've
