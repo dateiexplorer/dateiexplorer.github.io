@@ -14,7 +14,7 @@ subtitle: >-
 - [Handbücher/Wichtige Dateien](manuals/index)
 
 
-# Privates Wiki (Error: 404)
+# Privates Wiki (Status: 404)
 
 - [Projects](projects.priv/index.md)
 - [Networks](networks.priv/index.md)
