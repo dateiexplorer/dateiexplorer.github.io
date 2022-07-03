@@ -1,5 +1,5 @@
 ---
-title: Setup Flatpak
+title: Flatpak
 ---
 
 ## Void linux

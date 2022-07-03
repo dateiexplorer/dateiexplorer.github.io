@@ -1,16 +1,22 @@
 ---
-title: My personal Wiki
-subtitle: This is a collection of things that I know, things that I learn, and
-    things I want to remember.
+title: Wiki 
+subtitle: >-
+    Alle Dinge, die ich weiß, die ich wusste und dich ich vielleicht noch
+    wissen mag.
 ---
 
-[Projects](projects/index.md)
-[Networks](networks/index.md)
+# Öffentliches Wiki
 
-[Android](android/index)
-[Flatpak](flatpak/index)
+- [Flatpak](flatpak/index)
+- [Android](android/index)
+- [Steam](steam/index)
+- [Linux](linux/index)
+- [Handbücher/Wichtige Dateien](manuals/index)
 
-[Steam](steam/index)
 
-[Linux](linux/index)
-[Manuals](manuals/index)
+# Privates Wiki (Error: 404)
+
+- [Projects](projects.priv/index.md)
+- [Networks](networks.priv/index.md)
+
+
