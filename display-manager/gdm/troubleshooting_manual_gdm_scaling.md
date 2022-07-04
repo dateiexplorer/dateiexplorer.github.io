@@ -8,22 +8,25 @@ date: 2022-07-03
 Standardmäßig wird die UI von GDM bei HiDPI-Displays automatisch auf 2 (200%)
 skaliert. Notebooks mit einer geringeren Auflösung (wie das Framework-Notebook)
 werden ggf. auch als HiDPI-Displays erkannt. Dadurch wird die UI sehr groß.
+Genauso werden einige HiDPI-Displays nicht als solche erkannt, wodurch die
+UI-Elemente sehr klein gerendert werden.
 Daher kann die Skalierung auch manuell überschrieben werden.
 
-> **Hinweis:** Es sind nur Integerzahlen (1, 2, ...) zulässig.
-> Fractionl-scaling (z.B. 1.5) wird nicht unterstützt.
+> **Hinweis:** Es sind für die Skalierungnur Integerzahlen (1, 2, 3, 4)
+> zulässig.
+> Fractionl-scaling (z.B. 1.25, 1.5, ...) wird nicht unterstützt.
 
 
 # Lösung
 
 Um die Skalierung manuell zu ändern, muss der entsprechende Wert
-`scaling-factor` in den Schemata angepasst werden.
+(`scaling-factor`) in den GSettings-Schemata angepasst werden.
 
 > **Hinweis:** Die Schemata liegen als XML-Dateien vor. Diese Dateien sollten
-> niemals manuell editiert werden. Diese Dateien können vom Betriebssystem bei
+> niemals manuell editiert werden. Sie können vom Betriebssystem bei
 > einem Update überschrieben werden.
 
-> Der korrekte Weg, Konfigurationen an den Schemata vorzunehemn, ist das
+> Der korrekte Weg, um Konfigurationen an den Schemata vorzunehemn, ist das
 > Anlegen einer `geschema.override`-Datei.
 > Für weitere Informationen klicke [hier][freedesktop.org].
 
@@ -42,10 +45,10 @@ sie in jedem Fall alle anderen Einstellungen überschreibt.
 ```sh
 touch /usr/share/glib-2.0/schemas/99_hidpi.gschema.override
 ```
-In diese Datei können nun beliebige Einstellungen überschrieben werden. Um die
+In dieser Datei können nun beliebige Einstellungen überschrieben werden. Um die
 Skalierung von GDM auf 100% zu stellen, muss der `scaling-factor` auf den Wert
 1 gestellt werden. Es sind nur ganzzahlige Werte erlaubt. Valide Werte sind
-hier 0 (automatische Erkennung, das ist die Standardeinstellung) oder 1, 2, 3,
+hier 0 (automatische Erkennung, das ist die Standardeinstellung), 1, 2, 3,
 4 um die Skalierung entsprechend auf 100%, 200%, 300% oder 400% anzupassen.
 
 Es kann auch die globale Skalierung von Text angepasst werden, wenn eine andere
@@ -57,19 +60,26 @@ Der Inhalt der Override-Datei kann folgendermaßen aussehen:
 scaling-factor=1
 text-scaling-factor=1.0
 ```
-Die Option `text-scaling-factor` ist an dieser Stelle nur optional und kann
+Die Option `text-scaling-factor` ist an dieser Stelle optional und kann
 auch enfernt oder angepasst werden.
 
 Nachdem die Override-Dateien angelegt wurden, muss die GSettings-Datenbank
 neu kompiliert werden, sodass die Einstellungen angewendet werden.
+Die Datenbank ist eine Binärdatei, die aus den XML-Datein und den
+Override-Dateien erzeugt wird.
 Dazu kann folgender Befehl ausgeführt werden:
 ```sh
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 ```
 
+Das war's! Die Skalierung von GDM ist nun angepasst. Du kannst dich vom System
+abmelden, um die vogenommenen Änderungen zu sehen.
+
+
 # Weiterführende Links
 
-- [freedesktop.org][freedestkop.org]
+- [freedesktop.org][freedesktop.org]
+
 
 # Quelle 
 

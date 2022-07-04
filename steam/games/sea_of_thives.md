@@ -2,12 +2,12 @@
 title: Sea of Thieves
 ---
 
-## Troubleshooting
+# Troubleshooting
 
-### Spiel startet nicht
+## Spiel startet nicht
 
-Unter Void tritt beim Starten folgender Fehler in den Proton-Logs (PROTON=1)
-auf:
+Beim Starten tritt folgender Fehler in den Proton-Logs
+(Startparameter: `PROTON=1 %command%`) auf:
 ```
 eventfd: Too many open files.
 ```
@@ -24,6 +24,6 @@ Füge der Datei folgende Zeile hinzu:
 Das setzt für alle Benutzer (`*`) die maximale Anzahl geöffneter Dateien auf
 `1000000`. Dadurch wird das Problem behoben und das Spiel lässt sich starten.
 
-#### Quellen
-- https://www.protondb.com/app/1172620/
-- https://askubuntu.com/questions/1182021/too-many-open-files/1182049#1182049
+Siehe auch:
+- [protondb.com](https://www.protondb.com/app/1172620/)
+- [askubuntu.com](https://askubuntu.com/questions/1182021/too-many-open-files/1182049#1182049)

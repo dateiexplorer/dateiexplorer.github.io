@@ -1,35 +1,48 @@
 ---
-title: Install Steam via Flatpak
+title: Steam - Installation via Flatpak
 ---
 
-The steam package doesn't always install all dependencies automatically.
-To make things easier, you can install the Flatpak version of Steam.
+# Problem
 
-First make sure that you setup [Flatpak](../flatpak/setup) properly on your
-system.
+Das Steam-Paket installiert nicht immer alle Abhängigkeiten automatisch mit.
+Das kann dazu führen, dass einige Spiele oder Proton nicht wie erwartet
+funktionieren.
+Flatpak liefert alle Abhängigkeiten mit aus, die Steam benötigt und speichert
+sie in einer isolierten Sandbox.
 
-Now you can install Steam from the FlatHub repository: 
+
+# Lösung
+
+Um fortzufahren, muss zunächst [Flatpak](../flatpak/index) auf dem System
+installiert und eingerichtet sein.
+
+Anschließend kann das entsprechende Paket von FlatHub heruntergeladen werden:
 ```sh
 flatpak install com.valvesoftware.Steam
 ```
 
-To add a SteamLibrary form another file system you must grant the
-permissions for the application:
+Soll eine SteamLibrary von einer ander Festplatte eingebunden werden, müssen
+dem Flatpak hierfür zunächst entsprechende Berechtigungen gegeben werden:
 ```sh
 flatpak override --user --filesystem/path/to/steam/library \
     com.valvesoftware.Steam
 ```
 
-Now you've installed Steam.
-On the first start, you'll get a warning with a udev rule, but this can be
-ignored. Controllers working properly out of the box.
+Das war's! Steam ist nun auf dem System installiert.
+
+> **Hinweis:** Beim ersten Starten von Steam wird eine Warnung angezeigt, dass
+> eine entsprechende udev-Regel angepasst werden soll, um eine
+> Controllerunterstützung zu gewährleisten. Der XBox-Controller funktioniert
+> ohne weitere Konfigurationen. Die Meldung kann in diesem Fall ignoriert
+> werden.
 
 
-## Sources
-- https://flathub.org/apps/details/com.valvesoftware.Steam
+# Quellen 
+
+- [flathub.org](https://flathub.org/apps/details/com.valvesoftware.Steam)
 
 
-## Further reading 
-- Wiki for Steam-Flatpak:
-  https://github.com/flathub/com.valvesoftware.Steam/wiki
+# Weiterführende Links 
+
+- [Wiki des Steam-Flatpak](https://github.com/flathub/com.valvesoftware.Steam/wiki)
 

@@ -5,18 +5,47 @@ subtitle: >-
     wissen mag.
 ---
 
-# Öffentliches Wiki
+# Anwendungen, Tools und Entwicklungsumgebungen
 
-- [Flatpak](flatpak/index)
 - [Android](android/index)
+- Display Manager
+  - [GNOME Display Manager (GDM)](display-manager/gdm/index)
+- [Flatpak](flatpak/index)
+- [Linux Unified Key Setup (LUKS)](encryption/luks/index)
 - [Steam](steam/index)
-- [Linux](linux/index)
+
+
+# [Ethical Hacking](hacking.draft/index)
+
+
+# Skripte
+
+Für einige Probleme und Aufgaben liegen bereits ausführbare Skripte vor, um
+Vorgänge zu automatisieren, diese sind in einem separaten Git-Repository
+organisiert.
+Um die Skriptsammlung herunterzuladen, kann dieses Repository heruntergeladen
+werden. Es enthält alle Dateien dieses Wikis. Im Ordner `scripts/` wird ein
+Submodule geladen.
+
+Um das Repository mit allen Abhängigkeiten vollständig zu klonen, kann
+folgender Befehl ausgeführt werden:
+```sh
+git clone --recurse-submodules \
+    https://github.com/dateiexplorer/dateiexplorer.github.io.git
+```
+Dieser Befehl führt die drei folgenden Schritte aus:
+```sh
+git clone https://github.com/dateiexplorer/dateiexplorer.github.io.git`
+git submodule init
+git submodule update
+```
+Alternativ kann auch nur die Skriptsammlung heruntergeladen werden:
+```sh
+git clone https://github.com/dateiexplorer/dateiexplorer-script-collection.git
+```
+
+
+# Sonstiges
+
 - [Handbücher/Wichtige Dateien](manuals/index)
-
-
-# Privates Wiki (Status: 404)
-
-- [Projects](projects.priv/index.md)
-- [Networks](networks.priv/index.md)
-
 
