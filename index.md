@@ -41,7 +41,7 @@ git submodule update
 ```
 Alternativ kann auch nur die Skriptsammlung heruntergeladen werden:
 ```sh
-git clone https://github.com/dateiexplorer/dateiexplorer-script-collection.git
+git clone https://github.com/dateiexplorer/script-collection.git
 ```
 
 
